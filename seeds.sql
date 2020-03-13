@@ -13,4 +13,34 @@ CREATE TABLE products (
 );
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("Toilet Paper", "Grocery", 5, 10)
+VALUES ("Toilet Paper", "Grocery", 5, 100);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("Paper Towels", "Grocery", 5, 100);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("LCD TV", "Electronics", 500, 10);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("Computer", "Electronics", 700, 5);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("Louiseville Slugger", "Sporting Goods", 100, 10);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("Hoka One One", "Sporting Goods", 120, 15);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("The Power of One", "Books", 20, 100);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("The Signal and the Noise", "Books", 20, 100);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("Shampoo", "Health", 5, 100);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("Tylenol", "Health", 5, 100);
+
+
+
