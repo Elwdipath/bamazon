@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
     host: "localhost",
     port: "3306",
     user:"root",
-    password:"jdk43110",
+    password:"password",
     database: "bamazon"
 })
 
@@ -52,7 +52,7 @@ connection.connect(function(err) {
           for (i=0; i<results.length;i++){
             if (results[i].item_id === parseInt(answer.choice))
             selectedItem = results[i];
-            console.log(selectedItem)
+            // console.log(selectedItem)
           }
           if (selectedItem.stock_quantity > parseInt(answer.amount)){
             connection.query(
@@ -71,12 +71,35 @@ connection.connect(function(err) {
                 // update shoppers total
                 bill += parseInt(answer.amount) * (selectedItem.price).toFixed(2);
                 // display shoppers total
-                console.log("Your total is $" + bill);
+                console.log("Your total is $" + bill + '\n');
     
-                
+                keepShopping()
               }
             )
+            
+          }else {
+            console.log("Insufficient Quantities!")
+            keepShopping()
           }
         })
     })
+
+  function keepShopping() {
+    inquirer
+      .prompt([
+        {
+          name: "continue",
+          type: "list",
+          choices: ['Yes', 'No'],
+          message: " Would you like to keep shopping?"
+        }
+      ]).then(function (answer){
+        if (answer.continue === 'Yes'){
+          startInquirer()
+        }else {
+          console.log("Your total is $" + bill);
+          process.exit(0)
+        }
+      })
+  }
   }
